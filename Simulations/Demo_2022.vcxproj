@@ -224,14 +224,23 @@
     </FxCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MassPoint.cpp" />
+    <ClCompile Include="MassSpringSystemSimulator.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="Spring.cpp" />
     <ClCompile Include="TemplateSimulator.cpp" />
     <ClCompile Include="util\FFmpeg.cpp" />
     <ClCompile Include="util\util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawingUtilitiesClass.h" />
+    <ClInclude Include="MassPoint.h" />
     <ClInclude Include="MassSpringSystemSimulator.h" />
+    <ClInclude Include="Plane.h" />
     <ClInclude Include="Simulator.h" />
+    <ClInclude Include="Sphere.h" />
+    <ClInclude Include="Spring.h" />
     <ClInclude Include="TemplateSimulator.h" />
     <ClInclude Include="util\FFmpeg.h" />
     <ClInclude Include="util\matrixbase.h" />

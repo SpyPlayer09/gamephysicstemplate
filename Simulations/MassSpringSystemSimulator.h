@@ -1,6 +1,10 @@
 #ifndef MASSSPRINGSYSTEMSIMULATOR_h
 #define MASSSPRINGSYSTEMSIMULATOR_h
 #include "Simulator.h"
+#include "Spring.h"
+#include "MassPoint.h"
+#include "Plane.h"
+#include "Sphere.h"
 
 // Do Not Change
 #define EULER 0
@@ -8,6 +12,7 @@
 #define MIDPOINT 2
 // Do Not Change
 
+#define GRAVITY Vec3(0, -9.81f, 0)
 
 class MassSpringSystemSimulator:public Simulator{
 public:
@@ -42,6 +47,14 @@ public:
 		m_iIntegrator = integrator;
 	}
 
+	void doEuler(float timestep);
+	void doMidpoint(float timestep);
+
+	float calculateSpringForce(Spring spring);
+
+	void setupdemoscene();
+	void setupComplexScene();
+
 private:
 	// Data Attributes
 	float m_fMass;
@@ -49,10 +62,21 @@ private:
 	float m_fDamping;
 	int m_iIntegrator;
 
+	bool useGravity;
+
+	int controlIndex;
+
+	std::vector<MassPoint> mpList;
+	std::vector<Spring> springList;
+	std::vector<Plane> planeObstacles;
+	std::vector<Sphere> sphereObstacles;
+
+
 	// UI Attributes
 	Vec3 m_externalForce;
 	Point2D m_mouse;
 	Point2D m_trackmouse;
 	Point2D m_oldtrackmouse;
 };
+
 #endif
